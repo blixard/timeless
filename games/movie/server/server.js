@@ -15,6 +15,12 @@ app.use(express.static(path.join(__dirname,'../public')))
 io.on('connection', socket=>{
     console.log("connected yoo : " + socket.id )
     socket.emit('message' , 'this is a message')
+
+    socket.on('inputmovie', umovie =>{
+        console.log(umovie)
+        io.emit('message' , umovie)
+    })
+
 })
 
 // port

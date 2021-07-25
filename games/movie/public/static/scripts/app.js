@@ -1,12 +1,25 @@
 const socket = io()
 
 
-
+// message from server
 socket.on('message' , message =>{
-    console.log(message)
+    console.log("yellow " +  message)
+    outputmsg(message)
 })
 
+// puts msg in the DOM
+function outputmsg(msg){
+    console.log(msg)
+    const div = document.createElement('div');
+    div.classList.add('message');
+    div.innerHTML = `<p class="meta">rupel <span>9:12pm</span></p>
+    <p class="text">
+    ${msg}
+    </p>`;
 
+    console.log("div : " + div)
+    document.getElementById('dis_msg').appendChild(div);
+}
 
 
 
@@ -50,6 +63,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 function sbtn_fun(){
     var umovie = document.getElementById("input_id").value
+    socket.emit('inputmovie', umovie)
     document.getElementById("input_id").value = ""
     if(movie.original_title == umovie){
         alert("Correct")

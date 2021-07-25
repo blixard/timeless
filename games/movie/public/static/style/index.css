@@ -9,13 +9,7 @@
     place-items: center;
 }
 
-.main #image_id {
+.form{
     display: grid;
     place-items: center;
-    overflow:hidden;
-    height: 450px;
-}
-
-.main #image_id img{
-    margin: -10px 0px 0px -180px;
 }

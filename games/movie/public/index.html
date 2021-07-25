@@ -7,17 +7,29 @@
     <title>Timeless games</title>
     <link rel="stylesheet" href="./static/style/index.css">
     <script src="/socket.io/socket.io.js"></script>
-    <script type="module" src="./static/scripts/app.js"></script>
 </head>
 <body>
     <div class="main">
-        <div class="img" id= "image_id">
-        </div>
-        <div class="input">
-            <input type="text" class="in" id="input_id" >
-            <button class="btn" id="sbtn_id" onclick="sbtn_fun()" >submit</button>
-        </div>
-        
+        <form action="game.html" class="form" >
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Enter username..."
+                    required
+                />
+            </div>
+            <div class="form-control">
+                <label for="room">type</label>
+                <select name="room" id="room">
+                    <option value="all">all</option>
+                    <option value="indian movies">indian</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">submit</button>
+        </form>
     </div>
 
 </body>
