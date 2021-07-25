@@ -1,12 +1,22 @@
+const socket = io()
 
-https://api.themoviedb.org/3/search/movie?api_key=56c5269c916c25edf98a04f984705750&query=harry potter
-// https://api.themoviedb.org/3/discover/movie?api_key=56c5269c916c25edf98a04f984705750&primary_release_year=2017&sort_by=revenue.desc
+
+
+socket.on('message' , message =>{
+    console.log(message)
+})
+
+
+
+
+
 
 var movie
 var res 
 var list
 var c = 0
 var img
+
 
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
