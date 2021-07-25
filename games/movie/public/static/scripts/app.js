@@ -5,6 +5,13 @@ const socket = io()
 socket.on('message' , message =>{
     console.log("yellow " +  message)
     outputmsg(message)
+    // verifyMovie(message)
+})
+
+socket.on('verify_movie' , message =>{
+    console.log("vmovie " +  message)
+    outputmsg(message)
+    verifyMovie(message)
 })
 
 // puts msg in the DOM
@@ -60,11 +67,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 });
 
-
+// when the user enters the submit button , takes the input from user
 function sbtn_fun(){
     var umovie = document.getElementById("input_id").value
-    socket.emit('inputmovie', umovie)
     document.getElementById("input_id").value = ""
+    
+    socket.emit('inputmovie', umovie)
+}
+
+function verifyMovie(umovie){
     if(movie.original_title == umovie){
         alert("Correct")
         document.getElementById('image_id').removeChild(img);

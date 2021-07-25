@@ -18,7 +18,7 @@ io.on('connection', socket=>{
 
     socket.on('inputmovie', umovie =>{
         console.log(umovie)
-        io.emit('message' , umovie)
+        io.emit('verify_movie' , umovie)
     })
 
 })
